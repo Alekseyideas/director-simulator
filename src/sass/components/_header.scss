@@ -8,3 +8,24 @@
     }
   }
 }
+.header2 {
+  width: 100%;
+  background: rgb(239, 239, 239);
+  font-size: 1.6rem;
+
+  nav {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    a {
+      color: black;
+      display: block;
+      margin-right: 35px;
+
+      &:hover {
+        text-decoration: none;
+        color: rgb(1, 92, 170);
+      }
+    }
+  }
+}
