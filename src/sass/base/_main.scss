@@ -85,3 +85,24 @@ body {
     margin-top: 20px;
   }
 }
+
+.mainPageTest {
+  min-height: calc(90vh - 100px);
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+
+  .progress-circle {
+    width: 15rem;
+    height: 15rem;
+  }
+}
+
+.tda {
+  h2 {
+    margin: 20px;
+  }
+}
