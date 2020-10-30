@@ -19,6 +19,7 @@ const dist = './dist';
 const build = './build';
 
 const config = {
+  static: `/static`,
   css: `/css`,
   sass: `/sass`,
   pug: `/views/containers`,
@@ -89,6 +90,11 @@ const pugTask = () => {
     .pipe(browsersync.stream());
 };
 
+const staticTask = () => {
+  return gulp
+    .src(src + config.static + '/**/*')
+    .pipe(gulp.dest((config.production ? build : dist) + config.static));
+};
 const jsTask = () => {
   return gulp
     .src(src + config.js + '/index.js')
@@ -134,6 +140,7 @@ const revTask = () => {
     .pipe(gulp.dest(config.production ? build : dist));
 };
 
+gulp.task('staticTask', staticTask);
 gulp.task('revTask', revTask);
 gulp.task('images', images);
 gulp.task('sassTask', sassTask);
@@ -141,5 +148,8 @@ gulp.task('jsTask', jsTask);
 gulp.task('clean', clean);
 gulp.task('pugTask', pugTask);
 
-gulp.task('default', gulp.series(clean, gulp.parallel(sassTask, pugTask, jsTask, images)));
+gulp.task(
+  'default',
+  gulp.series(clean, gulp.parallel(sassTask, pugTask, jsTask, images, staticTask))
+);
 gulp.task('watch', gulp.series(gulp.parallel(watchFiles, browserSync)));

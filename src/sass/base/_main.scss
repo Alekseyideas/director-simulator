@@ -6,20 +6,20 @@ body {
   background: #f9f9f9;
   font: $font;
 }
-
+.page-title {
+  font-size: 45px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 0px;
+  font-weight: 600;
+}
 .mainPageWarpepr {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding-bottom: 50px;
-  h1 {
-    font-size: 45px;
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 0px;
-    font-weight: 600;
-  }
+
   h4 {
     margin-top: 20px;
     font-size: 18px;
@@ -84,4 +84,69 @@ body {
     color: white;
     margin-top: 20px;
   }
+}
+
+.mainPageTest {
+  min-height: calc(90vh - 100px);
+  padding: 40px 0;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  max-width: 1000px;
+  margin: auto;
+
+  .progress-circle {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .tda {
+    h2 {
+      margin: 20px;
+    }
+
+    &__testQWrapper {
+      ul {
+        margin-top: 30px;
+      }
+    }
+
+    &__btn {
+      margin-top: 20px;
+    }
+
+    &__circleTextWrapper > span {
+      font-size: 1.5rem;
+    }
+
+    &__questionErrorScreen {
+      ul {
+        margin-top: 20px;
+      }
+      & > div {
+        margin-top: 30px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .tda__testQWrapper ul li:before {
+    min-width: 17px;
+    max-width: 17px;
+    min-height: 17px;
+    max-height: 17px;
+  }
+  .tda__testQWrapper ul li.tda__active-itm:after {
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+p {
+  margin: 20px 0;
 }
