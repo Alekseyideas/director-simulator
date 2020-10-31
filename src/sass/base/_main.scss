@@ -96,11 +96,26 @@ body {
   margin: auto;
 
   .progress-circle {
-    width: 15rem;
-    height: 15rem;
+    width: 20rem;
+    height: 20rem;
+    margin-top: 5px;
   }
 
   .tda {
+    &__wrapper {
+      @include maxMd() {
+        flex-direction: column;
+      }
+      @include minMd() {
+        align-items: flex-start;
+      }
+    }
+    &__circleTextWrapper {
+      @include maxMd() {
+        margin-bottom: 40px;
+      }
+    }
+
     h2 {
       margin: 20px;
     }
